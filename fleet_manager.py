@@ -1,13 +1,13 @@
 def main():
     def init_database():
-        Names = ["James", "William", "Worf", "Hikaru", "Data"]
-        Ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lt. Commander"]
-        Divisions = ["Command", "Command", "Security", "Command", "Operations"]
-        IDs = ["100", "101", "102", "103", "104"]
+        names = ["James", "William", "Worf", "Hikaru", "Data"]
+        ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lt. Commander"]
+        divs = ["Command", "Command", "Security", "Command", "Operations"]
+        ids = ["100", "101", "102", "103", "104"]
         
-        return Names, Ranks, Divisions, IDs
+        return names, ranks, divs, ids
     
-    Names, Ranks, Divisions, IDs = init_database()
+    names, ranks, divs, ids = init_database()
 
     def display_menu():
         user_name = input("Please enter your full name: ")
@@ -25,6 +25,50 @@ def main():
 
         choice = input("Select choice: ")
 
-    display_menu()
+        def add_member(names, ranks, divs, ids):
+            
+            if choice == "1":  
+                print("You choice is 1")
 
+                new_name = input("Name: ")
+                if new_name in names:
+                    print("Invalid name")
+                else:
+                    print("Name added")
+                    names.append(new_name)
+               
+                new_rank = input("Rank: ")
+                if new_rank in ranks:
+                    print("Rank added")
+                    ranks.append(new_rank)
+                else:
+                    print("Invalid Rank")
+                    
+                new_div = input("Division: ")
+                if new_div in divs:
+                    print("Division added")
+                    divs.append(new_div)
+                else:
+                    print("Invalid Division")
+                    
+                new_ids = input("ID: ")
+                if new_ids in ids:
+                    print("Invalid ID")
+                else:
+                    print("ID is added")
+                    ids.append(new_ids)
+                
+
+
+            else:
+                print("Invalid number")
+
+        
+        add_member(names, ranks, divs, ids)
+
+    display_menu()
+    
 main()
+
+
+    
