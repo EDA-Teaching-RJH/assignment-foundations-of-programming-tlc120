@@ -44,6 +44,11 @@ def display_menu(names, ranks, divs, ids):
         elif choice == "4":
             print("You choice is 4")  
             display_roster(names, ranks, divs, ids) 
+
+
+        elif choice == "5":
+            print("You choice is 5")  
+            search_crew(names, ranks, divs, ids)
             
 
         else:
@@ -119,9 +124,36 @@ def display_roster(names, ranks, divs, ids):
     
     for member in range(len(names)):
         print(names[member] , "-" , ranks[member], "-" , divs[member], "-" , ids[member]) 
-        
-                
- 
+
+
+def search_crew(names, ranks, divs, ids):
+
+    sea = input("Please enter a term whose name of the crew member contains that term: ")
+
+    if sea == "James" or sea =="T" or sea == "Kirk":
+        print("James T. Kirk - Captain - Command - 100")
+
+    elif sea == "William" or sea == "Riker":
+        print("William Riker - Commander - Command - 101")
+
+    elif sea == "Worf":
+        print("Worf - Lt. Commander - Security - 102")
+    
+    elif sea == "Hikaru" or sea =="Sulu":
+        print("Hikaru Sulu - Lieutenant - Command - 103")
+
+    elif sea == "Data":
+        print("Data - Lt. Commander - Operations - 104")
+    
+    else:
+        sea == ""
+        print("This crew member is not exist")
+
+    names = names
+    ranks = ranks
+    divs = divs
+    ids = ids
+
 
 
 def main():
