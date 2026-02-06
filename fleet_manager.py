@@ -11,10 +11,10 @@ def display_menu(names, ranks, divs, ids):
     
     user_name = input("Please enter your full name: ")
 
-    print(f"\n{user_name} logged in.")
+    print(f"{user_name} logged in.")
     
     while True:
-        print("___ Menu____")
+        print(f"\n____ Menu____")
         print("1. Add Member")
         print("2. Remove Member")
         print("3. Update Rank")
@@ -39,7 +39,13 @@ def display_menu(names, ranks, divs, ids):
         elif choice == "3":
             print("You choice is 3")  
             update_rank(names, ranks, ids) 
+
+
+        elif choice == "4":
+            print("You choice is 4")  
+            display_roster(names, ranks, divs, ids) 
             
+
         else:
             print("Invalid number")
 
@@ -108,8 +114,13 @@ def update_rank(names, ranks, ids):
         print("This crew member is not exist")
 
                 
-
-
+def display_roster(names, ranks, divs, ids):
+    print("The Crew member table: ")
+    
+    for member in range(len(names)):
+        print(names[member] , "-" , ranks[member], "-" , divs[member], "-" , ids[member]) 
+        
+                
  
 
 
