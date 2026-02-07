@@ -56,6 +56,11 @@ def display_menu(names, ranks, divs, ids):
             filter_by_division(names, divs)   
 
 
+        elif choice == "7":
+            print("You choice is 7")  
+            calculate_payroll(ranks)   
+
+
         else:
             print("Invalid number")
 
@@ -111,12 +116,11 @@ def update_rank(names, ranks, ids):
 
     if up_rank in ids:
         up_id = ids.index(up_rank)
-        print(f"The rank of this member is {ranks[up_id]}")
+        print(ranks[up_id], "-" ,names[up_id], "-" ,ids[up_id])
                         
         up = input("Please enter the rank you want to update: ")
 
         ranks[up_id] = up
-        names == names
                         
         print("The member's rank updates")
 
@@ -136,50 +140,72 @@ def search_crew(names, ranks, divs, ids):
     sea = input("Please enter a term whose name of the crew member contains that term: ")
 
     if sea == "James" or sea =="T" or sea == "Kirk":
-        print("James T. Kirk - Captain - Command - 100")
+        print(names[0], "-", ranks[0], "-", divs[0], "-", ids[0])
 
     elif sea == "William" or sea == "Riker":
-        print("William Riker - Commander - Command - 101")
+        print(names[1], "-", ranks[1], "-", divs[1], "-", ids[1])
 
     elif sea == "Worf":
-        print("Worf - Lt. Commander - Security - 102")
+        print(names[2], "-", ranks[2], "-", divs[2], "-", ids[2])
     
     elif sea == "Hikaru" or sea =="Sulu":
-        print("Hikaru Sulu - Lieutenant - Sciences - 103")
+        print(names[3], "-", ranks[3], "-", divs[3], "-", ids[3])
 
     elif sea == "Data":
-        print("Data - Lt. Commander - Operations - 104")
+        print(names[4], "-", ranks[4], "-", divs[4], "-", ids[4])
     
     else:
         sea == ""
         print("This crew member is not exist")
 
-    names = names
-    ranks = ranks
-    divs = divs
-    ids = ids
-
 
 def filter_by_division(names, divs):
-    fil = input("Please enter the division of the Crew member (Command, Operations, or Sciences): ")
+    fil = input("Please enter the division of the Crew member: ")
 
     if fil == "Command":
-        print(f"James T. Kirk \nWilliam Riker")
+        print(names[0], "-", divs[0])
+        print(names[1], "-", divs[1])
+
 
     elif fil == "Operations":
-        print("Data")
+        print(names[4], "-", divs[4])
     
     elif fil == "Sciences":
-        print("Hikaru Sulu")
+        print(names[3], "-", divs[3])
+
+    elif fil == "Security":
+        print(names[2], "-", divs[2])
 
     else:
         fil == ""
         print("This crew member is not exist")
 
-    names = names
-    divs = divs
 
 
+
+
+def calculate_payroll(ranks):
+    payroll = input(f"Are you want to calculate the Credit value to ranks ? ")
+
+    if payroll == "yes":
+
+        Captain = 1000
+        Commander = 300
+        Lt_Commander = 500
+        Lieutenant = 700
+        calculate = [1000, 300, 500, 700, 500]
+
+        total = Captain + Commander + Lt_Commander + Lieutenant + Lt_Commander
+
+        for cal in range(len(ranks)):
+            print(ranks[cal] ,"=", calculate[cal])
+        
+        print(f"The total payroll is {total}")
+        
+
+
+
+                
 
 
 
