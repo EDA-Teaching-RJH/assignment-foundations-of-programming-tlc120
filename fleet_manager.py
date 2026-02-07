@@ -61,6 +61,11 @@ def display_menu(names, ranks, divs, ids):
             calculate_payroll(ranks)   
 
 
+        elif choice == "8":
+            print("You choice is 8")  
+            count_officers(ranks)  
+
+
         else:
             print("Invalid number")
 
@@ -185,7 +190,7 @@ def filter_by_division(names, divs):
 
 
 def calculate_payroll(ranks):
-    payroll = input(f"Are you want to calculate the Credit value to ranks ? ")
+    payroll = input(f"Do you want to calculate the Credit value to ranks ? ")
 
     if payroll == "yes":
 
@@ -200,17 +205,37 @@ def calculate_payroll(ranks):
         for cal in range(len(ranks)):
             print(ranks[cal] ,"=", calculate[cal])
         
-        print(f"The total payroll is {total}")
+        print(f"The total cost of the crew is {total}")
+    
+    else:
+        print("Return to Menu")
+
+
+def count_officers(ranks):
+    officers = input("Do you want to know the number of Captain and Commander ranks exist? ")
+
+    if officers == "yes":
+
+        number = 0
+        numbe = 0
+        for num in ranks:
+            
+            if num == "Captain" : 
+                number = number + 1
         
+        print("The number of Captain ranks is", number)
+
+        for nu in ranks:
+            
+            if nu == "Commander" : 
+                numbe = numbe + 1
+        
+        print("The number of Commander ranks is", numbe)
 
 
-
-                
-
-
-
-
-
+    else:
+        print("Return to Menu")
+    
 
 def main():
     names, ranks, divs, ids = init_database()
