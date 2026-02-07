@@ -1,7 +1,7 @@
 def init_database():
     names = ["James T. Kirk", "William Riker", "Worf", "Hikaru Sulu", "Data"]
     ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lt. Commander"]
-    divs = ["Command", "Command", "Security", "Command", "Operations"]
+    divs = ["Command", "Command", "Security", "Sciences", "Operations"]
     ids = ["100", "101", "102", "103", "104"]
         
     return names, ranks, divs, ids
@@ -49,7 +49,12 @@ def display_menu(names, ranks, divs, ids):
         elif choice == "5":
             print("You choice is 5")  
             search_crew(names, ranks, divs, ids)
-            
+
+
+        elif choice == "6":
+            print("You choice is 6")  
+            filter_by_division(names, divs)   
+
 
         else:
             print("Invalid number")
@@ -140,7 +145,7 @@ def search_crew(names, ranks, divs, ids):
         print("Worf - Lt. Commander - Security - 102")
     
     elif sea == "Hikaru" or sea =="Sulu":
-        print("Hikaru Sulu - Lieutenant - Command - 103")
+        print("Hikaru Sulu - Lieutenant - Sciences - 103")
 
     elif sea == "Data":
         print("Data - Lt. Commander - Operations - 104")
@@ -153,6 +158,31 @@ def search_crew(names, ranks, divs, ids):
     ranks = ranks
     divs = divs
     ids = ids
+
+
+def filter_by_division(names, divs):
+    fil = input("Please enter the division of the Crew member (Command, Operations, or Sciences): ")
+
+    if fil == "Command":
+        print(f"James T. Kirk \nWilliam Riker")
+
+    elif fil == "Operations":
+        print("Data")
+    
+    elif fil == "Sciences":
+        print("Hikaru Sulu")
+
+    else:
+        fil == ""
+        print("This crew member is not exist")
+
+    names = names
+    divs = divs
+
+
+
+
+
 
 
 
